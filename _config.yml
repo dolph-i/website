@@ -1,7 +1,8 @@
 title: Matraco
 description: Management · Training · Coaching
-baseurl: ""
+baseurl: ''
+repository: dolph-i/website
 markdown: kramdown
 theme: null
 plugins:
-  - jekyll-seo-tag
+    - jekyll-seo-tag
