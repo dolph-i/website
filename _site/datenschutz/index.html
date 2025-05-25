@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <title>Datenschutzerklärung | Matraco</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Informationen zum Datenschutz" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* Phase 1: Color Palette */
+            :root {
+                --primary-teal: #0f766e;
+                --secondary-teal: #0d9488;
+                --accent-teal: #14b8a6;
+                --light-teal: #5eead4;
+                --warm-gray: #f8fafc;
+                --medium-gray: #64748b;
+                --dark-gray: #1e293b;
+                --success-green: #059669;
+                --trust-blue: #0369a1;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-teal) 0%,
+                    var(--secondary-teal) 50%,
+                    var(--accent-teal) 100%
+                );
+            }
+
+            /* Phase 1: Typography */
+            .font-primary {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', sans-serif;
+            }
+
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Phase 1: Brand Elements */
+            .brand-icon {
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.1) 100%
+                );
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .brand-text {
+                font-weight: 800;
+                letter-spacing: 0.05em;
+            }
+
+            /* =================================================================== */
+            /* PHASE 2: MODERN NAVIGATION & UX */
+            /* =================================================================== */
+
+            /* Modern Header with Glass Morphism */
+            .modern-header {
+                background: rgba(15, 118, 110, 0.95);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: sticky;
+                top: 0;
+                z-index: 50;
+            }
+
+            /* Modern Navigation Items */
+            .nav-item {
+                position: relative;
+                padding: 12px 20px;
+                border-radius: 12px;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .nav-item:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-2px);
+                color: white;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-item::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #5eead4, #14b8a6);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+
+            .nav-item:hover::before {
+                width: 80%;
+            }
+
+            /* Modern Contact CTA */
+            .modern-cta {
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.1)
+                );
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                padding: 12px 24px;
+                border-radius: 50px;
+                font-weight: 600;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .modern-cta::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent
+                );
+                transition: left 0.5s;
+            }
+
+            .modern-cta:hover {
+                background: rgba(255, 255, 255, 0.25);
+                transform: translateY(-2px);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .modern-cta:hover::before {
+                left: 100%;
+            }
+
+            /* Modern Mobile Menu */
+            .mobile-menu {
+                background: rgba(15, 118, 110, 0.98);
+                backdrop-filter: blur(20px);
+                border-radius: 16px 16px 0 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                animation: slideUp 0.3s ease-out;
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .mobile-nav-item {
+                padding: 16px 24px;
+                border-radius: 12px;
+                margin: 8px 0;
+                transition: all 0.3s ease;
+                border: 1px solid transparent;
+            }
+
+            .mobile-nav-item:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.2);
+                transform: translateX(8px);
+            }
+
+            /* Modern Hamburger Menu */
+            .hamburger {
+                width: 24px;
+                height: 24px;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: white;
+                border-radius: 2px;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                position: absolute;
+            }
+
+            .hamburger span:nth-child(1) {
+                top: 0;
+            }
+            .hamburger span:nth-child(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .hamburger span:nth-child(3) {
+                bottom: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg);
+                top: 50%;
+                margin-top: -1px;
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg);
+                bottom: 50%;
+                margin-bottom: -1px;
+            }
+
+            /* Modern Logo Enhancement */
+            .modern-logo {
+                transition: all 0.3s ease;
+            }
+
+            .modern-logo:hover {
+                transform: scale(1.05);
+            }
+
+            .logo-icon {
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.25) 0%,
+                    rgba(255, 255, 255, 0.1) 100%
+                );
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Datenschutzerklärung | Matraco</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Datenschutzerklärung" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Informationen zum Datenschutz" />
+<meta property="og:description" content="Informationen zum Datenschutz" />
+<link rel="canonical" href="http://localhost:4000/datenschutz/" />
+<meta property="og:url" content="http://localhost:4000/datenschutz/" />
+<meta property="og:site_name" content="Matraco" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Datenschutzerklärung" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Informationen zum Datenschutz","headline":"Datenschutzerklärung","url":"http://localhost:4000/datenschutz/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    </head>
+    <body
+        class="font-primary bg-gray-50 text-gray-800 leading-relaxed antialiased"
+    >
+        <!-- PHASE 2: MODERN NAVIGATION HEADER -->
+        <header class="modern-header">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4 lg:py-6">
+                    <!-- Modern Logo/Brand -->
+                    <div class="flex items-center space-x-4 modern-logo">
+                        <div class="logo-icon p-3 lg:p-4 rounded-2xl">
+                            <i
+                                class="fas fa-users text-2xl lg:text-3xl text-white"
+                            ></i>
+                        </div>
+                        <div class="space-y-1">
+                            <a
+                                href="/"
+                                class="brand-text text-2xl lg:text-3xl text-shadow-lg hover:text-teal-100 transition-colors block text-white"
+                            >
+                                MATRACO
+                            </a>
+                            <p
+                                class="text-teal-100 text-sm lg:text-base font-medium tracking-wide hidden sm:block"
+                            >
+                                Management · Training · Coaching
+                            </p>
+                            <p
+                                class="text-teal-200 text-xs lg:text-sm font-light hidden lg:block"
+                            >
+                                Erfolgreiche Führung durch professionelle
+                                Begleitung
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Modern Desktop Navigation -->
+                    <nav class="hidden lg:flex items-center space-x-2">
+                        <a
+                            href="/"
+                            class="nav-item flex items-center space-x-2"
+                        >
+                            <i class="fas fa-home text-sm"></i>
+                            <span>Start</span>
+                        </a>
+                        <a
+                            href="/wer-sind-wir"
+                            class="nav-item flex items-center space-x-2"
+                        >
+                            <i class="fas fa-user text-sm"></i>
+                            <span>Über uns</span>
+                        </a>
+                        <a
+                            href="/was-tun-wir"
+                            class="nav-item flex items-center space-x-2"
+                        >
+                            <i class="fas fa-briefcase text-sm"></i>
+                            <span>Leistungen</span>
+                        </a>
+
+                        <!-- Modern Contact CTA -->
+                        <a
+                            href="#kontakt"
+                            class="modern-cta flex items-center space-x-2 ml-4 text-white"
+                        >
+                            <i class="fas fa-envelope text-sm"></i>
+                            <span>Kontakt</span>
+                        </a>
+                    </nav>
+
+                    <!-- Modern Mobile Menu Button -->
+                    <button
+                        class="lg:hidden modern-cta p-3"
+                        onclick="toggleMobileMenu()"
+                        id="mobile-menu-button"
+                    >
+                        <div class="hamburger" id="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Modern Mobile Navigation -->
+                <div id="mobile-menu" class="hidden lg:hidden mobile-menu mb-4">
+                    <nav class="px-4 py-6 space-y-2">
+                        <a
+                            href="/"
+                            class="mobile-nav-item flex items-center space-x-3 text-white font-medium"
+                        >
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center"
+                            >
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <span>Start</span>
+                        </a>
+                        <a
+                            href="/wer-sind-wir"
+                            class="mobile-nav-item flex items-center space-x-3 text-white font-medium"
+                        >
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center"
+                            >
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span>Über uns</span>
+                        </a>
+                        <a
+                            href="/was-tun-wir"
+                            class="mobile-nav-item flex items-center space-x-3 text-white font-medium"
+                        >
+                            <div
+                                class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center"
+                            >
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <span>Leistungen</span>
+                        </a>
+
+                        <!-- Mobile Contact CTA -->
+                        <div class="pt-4">
+                            <a
+                                href="#kontakt"
+                                class="modern-cta w-full flex items-center justify-center space-x-2 text-white font-semibold"
+                            >
+                                <i class="fas fa-envelope"></i>
+                                <span>Kontakt aufnehmen</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="min-h-screen"><h1 id="datenschutzerklärung">Datenschutzerklärung</h1>
+
+<p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+
+<h2 id="1-verantwortliche-stelle">1. Verantwortliche Stelle</h2>
+
+<p><strong>Ralph Manger</strong><br />
+Finnlandring 18<br />
+23669 Timmendorfer Strand</p>
+
+<p>Telefon: +49 4503 406 9085<br />
+E‑Mail: <a href="mailto:info@matraco.de">info@matraco.de</a></p>
+
+<h2 id="2-datenerfassung-auf-unserer-website">2. Datenerfassung auf unserer Website</h2>
+
+<p>Ihre Daten werden einerseits dadurch erhoben, dass Sie uns diese mitteilen (z. B. in ein Kontaktformular eingeben). Andere Daten werden beim Besuch der Website automatisch durch unsere IT‑Systeme erfasst. Das sind vor allem technische Daten (Browser, Betriebssystem, Uhrzeit des Seitenaufrufs …).</p>
+
+<h2 id="3-ihre-rechte">3. Ihre Rechte</h2>
+
+<p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der oben angegebenen Adresse an uns wenden.</p>
+</main>
+
+        <!-- Enhanced Footer -->
+        <footer id="kontakt" class="bg-gray-900 text-gray-300">
+            <div class="max-w-6xl mx-auto">
+                <!-- Contact Section -->
+                <div class="px-8 py-16 border-b border-gray-700">
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <h3 class="text-3xl font-bold text-white mb-6">
+                                Kontakt aufnehmen
+                            </h3>
+                            <p class="text-gray-400 text-lg leading-relaxed">
+                                Lassen Sie uns gemeinsam Ihren Erfolg gestalten.
+                                Wir freuen uns auf das Gespräch mit Ihnen.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-teal-600 p-3 rounded-lg">
+                                        <i
+                                            class="fas fa-user-tie text-white"
+                                        ></i>
+                                    </div>
+                                    <span class="font-semibold text-lg"
+                                        >Ralph Manger</span
+                                    >
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-teal-600 p-3 rounded-lg">
+                                        <i
+                                            class="fas fa-envelope text-white"
+                                        ></i>
+                                    </div>
+                                    <a
+                                        href="mailto:info@matraco.de"
+                                        class="hover:text-teal-400 transition-colors text-lg"
+                                    >
+                                        info@matraco.de
+                                    </a>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-teal-600 p-3 rounded-lg">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <a
+                                        href="tel:+49"
+                                        class="hover:text-teal-400 transition-colors text-lg"
+                                    >
+                                        Telefonnummer auf Anfrage
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-bold text-white">
+                                Schnellanfrage
+                            </h3>
+                            <p class="text-gray-400 text-lg leading-relaxed">
+                                Schreiben Sie uns eine E-Mail oder rufen Sie uns
+                                an. Wir melden uns zeitnah bei Ihnen zurück.
+                            </p>
+                            <a
+                                href="mailto:info@matraco.de?subject=Anfrage%20über%20Website"
+                                class="inline-flex items-center space-x-3 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl transition-all duration-300 font-semibold text-lg hover:transform hover:scale-105 hover:shadow-lg"
+                            >
+                                <i class="fas fa-paper-plane"></i>
+                                <span>E-Mail schreiben</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="px-8 py-8">
+                    <div
+                        class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0"
+                    >
+                        <div class="text-gray-400 font-medium">
+                            &copy; 2025 Ralph Manger –
+                            MATRACO
+                        </div>
+                        <nav class="flex space-x-8">
+                            <a
+                                href="/impressum"
+                                class="hover:text-teal-400 transition-colors font-medium"
+                            >
+                                Impressum
+                            </a>
+                            <a
+                                href="/datenschutz"
+                                class="hover:text-teal-400 transition-colors font-medium"
+                            >
+                                Datenschutz
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            function toggleMobileMenu() {
+                const menu = document.getElementById('mobile-menu');
+                const hamburger = document.getElementById('hamburger');
+
+                menu.classList.toggle('hidden');
+                hamburger.classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>

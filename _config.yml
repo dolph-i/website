@@ -1,0 +1,7 @@
+title: Matraco
+description: Management · Training · Coaching
+baseurl: ""
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
